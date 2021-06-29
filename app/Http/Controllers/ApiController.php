@@ -13,6 +13,7 @@ class ApiController extends Controller
  
     public function apiRegister()
     {
+     
         return view('welcome');
     }
 
@@ -74,11 +75,16 @@ class ApiController extends Controller
 
     }
 
-    public function apiRegisterGet()
+    public function apiRegisterGet(Request $request)
     {
+        $location_text = "The IP address {$request->ipinfo->ip}.";
+        $allinfo=$request->ipinfo->all;
         $users = User::all();
         return response()->json([
-            'users' => $users
+            'users' => $users,
+            'location_text' => $location_text,
+            'allinfo' => $allinfo,
+
         ], Response::HTTP_ACCEPTED);
     }
 

@@ -29,5 +29,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'ipinfo' => [
+        'access_token' => "$2y$10INqWX3Bf0KyA/xZtMt25Wu/f21DsA6hdWzH5odKIBCQlDOYB4i2pG",
+    ],
+    'ipinfo' => [
+        'access_token' => env('IPINFO_SECRET'),
+    ],
 
 ];
